@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset="utf-8">
+        <title>登入</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="main.js"></script>
+
+    </head>
+    <body>
+        <h1>你的愛情是什麼滋味</h1>
+        <p>Enter names in the fields, then click "Submit" to submit the form: 
+        </p>
+       
+        <form id="frm1" action="/">
+            First name: <input type="text" name="fname"><br>
+            Last name: <input type="text" name="lname"><br><br>
+            <input type="button" onclick="myFunction()" value="Submit">
+        </form>
+       
+        <script>
+            function myFunction() {
+                document.getElementById("frm1").submit();
+                formSerialize(document.getElementById("frm1"))
+            }
+            function formSerialize(formElement) {
+                const values = {};
+                const inputs = formElement.elements;
+                for (let i = 0; i < inputs.length; i++) {
+                    values[inputs[i].name] = inputs[i].value;
+                }
+            return values;
+            }
+            
+        </script>
+    </body>
+</html>
