@@ -1,0 +1,134 @@
+<!--星空背景_開始-->
+<script language="JavaScript"> 
+
+//在此修改星星的顏色
+cOlOuRs=new Array("abbbff","ffffee","ffff7a","dffffd","ffaaa0","ffddd0") 
+
+//在此修改星星的數量
+S_amount = 30;
+
+//在此修改星星的大小
+L_amount = 10;
+
+S_Ypos = new Array(); 
+S_Xpos = new Array(); 
+L_Ypos = new Array(); 
+L_Xpos = new Array(); 
+S_speed= new Array(); 
+L_speed= new Array(); 
+
+if (document.all) 
+{ 
+  for (i = 0; i < S_amount; i++)  
+  {                                                                 
+    S_Ypos[i] = Math.round(Math.random()*document.body.offsetHeight); 
+    S_Xpos[i] = Math.round(Math.random()*document.body.offsetWidth); 
+  } 
+  for (i = 0; i < L_amount; i++)  
+  {                                                                 
+    L_Ypos[i] = Math.round(Math.random()*document.body.offsetHeight); 
+    L_Xpos[i] = Math.round(Math.random()*document.body.offsetWidth); 
+  } 
+  document.write('<div id="Outer" style="position:absolute;top:0px;left:0px">'); 
+  document.write('<div id="Inner" style="position:relative">'); 
+  for (i = 0; i < S_amount; i++) 
+  {document.write('<div id="ieS_star" style="position:absolute;top:'+S_Ypos[i]+';left:'+S_Xpos[i]+';width:1px;height:1px;background:#fffff0;font-size:1px"></div>');} 
+  for (i = 0; i < L_amount; i++)  
+  {document.write('<div id="ieL_star" style="position:absolute;top:'+L_Ypos[i]+';left:'+L_Xpos[i]+';width:2px;height:2px;background:#ffffff;font-size:2px"></div>');} 
+  document.write('</div>'); 
+  document.write('</div>'); 
+  for (i = 0; i < L_amount; i++)  
+  { 
+    for (j = 0; j < cOlOuRs.length; j++) 
+      {var NewColour=Math.round(Math.random()*[j])} 
+    document.all.ieS_star[i].style.background=cOlOuRs[NewColour]; 
+    document.all.ieL_star[i].style.background=cOlOuRs[NewColour]; 
+  } 
+  for (i=0; i < ieS_star.length; i++){S_speed[i]=Math.random()*3+1} 
+  for (i=0; i < ieL_star.length; i++){L_speed[i]=Math.random()*7+2} 
+  function ES_go() 
+  { 
+    document.all.Outer.style.pixelTop=document.body.scrollTop; 
+    for (i=0; i < ieS_star.length; i++) 
+    { 
+      ieS_star[i].style.pixelLeft-=S_speed[i]; 
+      if (ieS_star[i].style.pixelLeft < -10){ieS_star[i].style.pixelLeft=window.document.body.offsetWidth} 
+    } 
+    S_timer=setTimeout('ES_go()',30); 
+  } 
+  function EL_go() 
+  { 
+    for (i=0; i < ieL_star.length; i++) 
+    { 
+      ieL_star[i].style.pixelLeft-=L_speed[i]; 
+      if (ieL_star[i].style.pixelLeft < -10){ieL_star[i].style.pixelLeft=window.document.body.offsetWidth} 
+    } 
+    L_timer=setTimeout('EL_go()',10); 
+  } 
+  function IeStart() 
+  { 
+    ES_go(); 
+    EL_go(); 
+  } 
+  IeStart() 
+}
+else if (document.layers) 
+{ 
+  for (i = 0; i < S_amount; i++)  
+  {                                                                 
+    S_Ypos[i] = Math.round(Math.random()*window.innerHeight); 
+    S_Xpos[i] = Math.round(Math.random()*window.innerWidth); 
+    document.write("<LAYER NAME='S_star"+i+"' LEFT=0 TOP=0 BGCOLOR='#FFFFF0' CLIP='0,0,1,1'></LAYER>"); 
+    document.layers["S_star"+i].top = S_Ypos[i]; 
+    document.layers["S_star"+i].left = S_Xpos[i]; 
+  } 
+  for (i = 0; i < L_amount; i++)  
+  { 
+    L_Ypos[i] = Math.round(Math.random()*window.innerHeight); 
+    L_Xpos[i] = Math.round(Math.random()*window.innerWidth); 
+    document.write("<LAYER NAME='L_star"+i+"' LEFT=0 TOP=0 BGCOLOR='#FFFFF0' CLIP='0,0,2,2'></LAYER>"); 
+    document.layers["L_star"+i].top = L_Ypos[i]; 
+    document.layers["L_star"+i].left = L_Xpos[i]; 
+    for (j = 0; j < cOlOuRs.length; j++) 
+    { 
+      var NewColour=Math.round(Math.random()*[j]); 
+    } 
+    document.layers['S_star'+i].bgColor=cOlOuRs[NewColour]; 
+    document.layers['L_star'+i].bgColor=cOlOuRs[NewColour]; 
+  } 
+  for (i=0; i < S_amount; i++){S_speed[i]=Math.random()*3+1} 
+  for (i=0; i < L_amount; i++){L_speed[i]=Math.random()*7+2}  
+  function NS_go() 
+  { 
+    for (i=0; i < S_amount; i++) 
+    { 
+      var temp="S_star"+i;//50 
+      document.layers[temp].top=S_Ypos[i]+window.pageYOffset; 
+      document.layers['S_star'+i].left-=S_speed[i]; 
+      if (document.layers['S_star'+i].left < -10){document.layers['S_star'+i].left=window.innerWidth} 
+    } 
+    S_timer=setTimeout('NS_go()',30); 
+  } 
+  function NL_go() 
+  { 
+    for (i=0; i < L_amount; i++) 
+    { 
+      var temp="L_star"+i 
+      document.layers[temp].top=L_Ypos[i]+window.pageYOffset; 
+      document.layers['L_star'+i].left-=L_speed[i]; 
+      if (document.layers['L_star'+i].left < -10){document.layers['L_star'+i].left=window.innerWidth} 
+    } 
+    L_timer=setTimeout('NL_go()',10); 
+  } 
+  function NsStart() 
+  { 
+    NS_go(); 
+    NL_go(); 
+  } 
+  NsStart(); 
+}
+window.onresize = new Function("window.location.reload()"); 
+
+</script>
+<div style="position:relative"></div>
+<!--星空背景_結束-->
