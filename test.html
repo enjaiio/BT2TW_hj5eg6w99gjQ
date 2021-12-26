@@ -61,7 +61,51 @@
     </header>
 
    
-    
+    <main>
+    <!--<form method = "post" action = "gfg.php"> 
+  
+        <div id = "form_page"> 
+ 
+            <div id = "form_body"> 
+                <div id = "head"> 
+                    <h1 id = "heading">GFG</h1> 
+                </div> 
+                <br /> 
+                <div id = "input_name" class = "input"> 
+                    <input id = "name" type = "text"
+                        Placeholder = "Name" name = "name"
+                        required> 
+                </div> 
+                <div id = "input_class" class = "input"> 
+                    <input type = "text" placeholder = 
+                        "Branch" name = "branch" required> 
+                </div> 
+                <div id = "input_year" class = "input"> 
+                    <input id = "school" type = "text"
+                        name = "year"
+                        placeholder = "Year"> 
+                </div> 
+ 
+                <div class = "id input"> 
+                    <input id = "submit" type = "submit"
+                        name = "submit" value = "submit"
+                        onclick = "on_submit()"> 
+                </div> 
+            </div> 
+        </div> 
+    </form>-->
+      <a href="./sign">還沒註冊嗎?</a>
+      <form action="logcheck.php" method="post">
+           <input type="text" name="account" value="" placeholder="輸入帳號">
+          <input type="password" name="password" value="" placeholder="輸入密碼">
+          <input type="submit" name="" value="登入">
+      </form>
+      <?php if ($_GET['sig_suc']!=''): ?>
+        <?php echo $_GET['sig_suc'] ?>
+      <?php endif; ?>
+      <?php if ($_GET['error']!=''): ?>
+        <?php echo $_GET['error'] ?>
+      <?php endif; ?>
         <hr class="featurette-divider">
         </div><!-- /.container -->	
     </main>
