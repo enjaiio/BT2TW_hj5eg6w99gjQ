@@ -6,17 +6,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-
+ 
     <title>ღB T 2 T W• 腐腐分享間</title>
-
+ 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="simple-rpg/style.css" rel="stylesheet">
+ 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
   </head>
-  <body background="1.jpg" >
-
+  <body>
+ 
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">ღB T 2 T W•</a>
@@ -26,7 +27,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">自我介紹 <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.html">自我介紹 <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="random-selector.html">RandomSelect</a>
@@ -38,6 +39,9 @@
               <a class="nav-link" href="mind-quiz.html">MindQuiz</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#">SimpleRPG</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="youtube-player.html">YoutubePlayer</a>
             </li>
             <li class="nav-item">
@@ -47,9 +51,7 @@
             <!--
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-            -->
-
+            </li>-->
           </ul>
           <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -58,15 +60,26 @@
         </div>
       </nav>
     </header>
-
-   
-
+ 
+    <main role="main">
+      <div class="container marketing">
+ 
+        <hr class="featurette-divider">
+        <h1>我要去右下角</h1>
+        <div>
+            <canvas id="myCanvas" width="600" height="600"></canvas>
+            <div id="talkBox"></div>
+        </div>
+        <hr class="featurette-divider">
       </div><!-- /.container -->
-	<h1>我是?????????????????</h1?
-				
-     </font>
+ 
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
     </main>
-
+ 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -76,5 +89,6 @@
     <script src="dist/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="assets/js/vendor/holder.min.js"></script>
+    <script src="simple-rpg/main.js"></script>
   </body>
 </html>
