@@ -95,20 +95,15 @@
         </div> 
     </form>-->
       <br>
-      <a href="./sign">還沒註冊嗎?</a>
-      <form action="logcheck.php" method="post">
-          <input type="text" name="account" value="" placeholder="輸入帳號">
-          <br>
-          <input type="password" name="password" value="" placeholder="輸入密碼">
-          <br>
-          <input type="submit" name="" value="登入">
-      </form>
-      <?php if ($_GET['sig_suc']!=''): ?>
-        <?php echo $_GET['sig_suc'] ?>
-      <?php endif; ?>
-      <?php if ($_GET['error']!=''): ?>
-        <?php echo $_GET['error'] ?>
-      <?php endif; ?>
+        <form class="" action="add.php" method="post">
+          <input type="mail" name="mail" value="" placeholder="輸入註冊信箱">
+          <input type="text" name="password" value=""panel placeholder="輸入密碼">
+          <input type="password" name="pwcheck" value=""panel placeholder="再次輸入密碼">
+          <input type="text" name="name" value="" placeholder="輸入姓名">
+          <input type="number" name="phone" value="" placeholder="輸入電話">
+          <input type="text" name="addr" value="" placeholder="輸入地址">
+          <input type="submit" name="" value="註冊">
+        </form>
         <hr class="featurette-divider">
         </div><!-- /.container -->	
     </main>
