@@ -24,8 +24,6 @@
     <link href="carousel.css" rel="stylesheet">
   </head>
   <body background="test/1.jpg" >
-    <script language="JavaScript" src="star.html"></script>
-    <script language="JavaScript" src="mouse.html"></script>
 
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -36,13 +34,13 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">介紹 <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.html">介紹 <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">test</a>
+                <a class="nav-link" href="test.html">test</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="phplogin.html">php</a>
+                <a class="nav-link" href="#">php</a>
             </li>
 
             <!--
@@ -62,45 +60,59 @@
 
    
     <main>
-    <!--<form method = "post" action = "gfg.php"> 
-  
-        <div id = "form_page"> 
- 
-            <div id = "form_body"> 
-                <div id = "head"> 
-                    <h1 id = "heading">GFG</h1> 
-                </div> 
-                <br /> 
-                <div id = "input_name" class = "input"> 
-                    <input id = "name" type = "text"
-                        Placeholder = "Name" name = "name"
-                        required> 
-                </div> 
-                <div id = "input_class" class = "input"> 
-                    <input type = "text" placeholder = 
-                        "Branch" name = "branch" required> 
-                </div> 
-                <div id = "input_year" class = "input"> 
-                    <input id = "school" type = "text"
-                        name = "year"
-                        placeholder = "Year"> 
-                </div> 
- 
-                <div class = "id input"> 
-                    <input id = "submit" type = "submit"
-                        name = "submit" value = "submit"
-                        onclick = "on_submit()"> 
-                </div> 
-            </div> 
-        </div> 
-    </form>-->
-      <br>
-      <a href="test/cr.html">還沒註冊嗎?</a><br>
-       <form action="logcheck.php" method="post"><br>
-         <input type="text" name="account" value="" placeholder="輸入帳號"><br>
-         <input type="password" name="password" value="" placeholder="輸入密碼"><br>
-         <input type="submit" name="" value="登入"><br>
-      </form>
+        <div class="system_name">
+            <h2>○○系統</h2>
+          </div>
+          
+          <div class="login_page">
+            <div id="container1">
+      
+              <div class="login">  
+                
+                <h3>登入 Login</h3>
+      
+                <form action="用戶管理.php">
+                  <input type="text" id="username" name="username" placeholder="帳號" required>
+                  <div class="tab"></div>
+                  <input type="text" id="password" name="password" placeholder="密碼" required>
+                  <div class="tab"></div>
+                  <input type="submit" value="登入" class="submit" onclick="location.href='https://codepen.io/rosewang0303/full/OQbLBv/'">
+                </form>  
+      
+                <h5 onclick="show_hide()">註冊帳號</h5>
+                
+              </div><!-- login end-->
+            </div><!-- container1 end-->
+          </div><!-- login_page end-->
+          
+          <div class="signup_page"
+            <div id="container2">
+      
+              <div class="signup">  
+                
+                <h3>註冊 Sign Up</h3>
+      
+                <form action="用戶管理.php">
+                  <input type="text" id="fullname" name="fullname" placeholder="使用者全名" required>
+                  <div class="tab"></div>
+                  <input type="text" id="username2" name="username" placeholder="帳號" required>
+                  <div class="tab"></div>
+                  <input type="text" id="password2" name="password" placeholder="密碼" required>
+                  <div class="tab"></div>
+                  <input type="text" id="comfirm_password" name="comfirm_password" placeholder="確認密碼" required>
+                  <div class="tab"></div>            
+                  <input type="submit" value="註冊" class="submit">
+                </form>  
+      
+                <h5 onclick="show_hide()">登入帳號</h5>
+                
+              </div><!-- signup end-->
+            </div><!-- container2 end-->
+          </div><!-- signup_page end--> 
+      
+          <div id="copyright">
+            <h4>Copyright © 2018 RoseWang All rights reserved</h4><!--因為js，會跑版--> 
+          </div> 
         <hr class="featurette-divider">
         </div><!-- /.container -->	
     </main>
